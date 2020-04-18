@@ -8,6 +8,13 @@ jobs:
         id: checkout_repository
         uses: actions/checkout@master
       
+      # Connect or Create the Azure Machine Learning Workspace
+      - name: Connect/Create Azure Machine Learning Workspace
+        id: aml_workspace
+        uses: Azure/aml-workspace@master
+        with:
+            azure_credentials: ${{ secrets.AZURE_CREDENTIALS }}
+            
       - name: Self test
         id: selftest
         uses: ashishonce/amlrun@master
