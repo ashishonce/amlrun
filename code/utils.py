@@ -116,7 +116,7 @@ def load_runconfig_python(workspace, runconfig_python_file, runconfig_python_fun
         print(f"::debug::Could not load python script or function in your repository which defines the experiment config (Script: /{runconfig_python_file}, Function: {runconfig_python_function_name}()): {exception}")
     except AttributeError as exception:
         print(f"::debug::Could not load python script or function in your repository which defines the experiment config (Script: /{runconfig_python_file}, Function: {runconfig_python_function_name}()): {exception}")
-
+    print(run_config_function)
     # Load experiment config
     print("::debug::Loading experiment config")
     try:
