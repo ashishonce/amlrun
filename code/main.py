@@ -210,11 +210,12 @@ def main():
     
     submittedRuns_for_wait = []
     for parameter in parameters:
+        print(parameter)
         run,wait_for_completion = submitRun(ws,parameter)
         
         # add a list of tuple to be used later, we will use it to wait. 
         if wait_for_completion == True:
-            submittedRuns_for_wait.append((run));
+            submittedRuns_for_wait.append(run);
     
     postRun(submittedRuns_for_wait)
     print("submission over")
