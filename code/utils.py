@@ -110,7 +110,8 @@ def load_runconfig_python(workspace, runconfig_python_file, runconfig_python_fun
         run_config_module = importlib.util.module_from_spec(spec=run_config_spec)
         print(run_config_module, runconfig_python_function_name, run_config_spec)
         run_config_spec.loader.exec_module(run_config_module)
-        print(" loading complete")
+        print("::debug:: loading complete \n")
+        print(" now running attr function")
         run_config_function = getattr(run_config_module, runconfig_python_function_name, None)
     except ModuleNotFoundError as exception:
         print(f"::debug::Could not load python script in your repository which defines the experiment config (Script: /{runconfig_python_file}, Function: {runconfig_python_function_name}()): {exception}")
