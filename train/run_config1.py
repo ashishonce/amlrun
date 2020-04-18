@@ -2,7 +2,7 @@ from azureml.core import ComputeTarget
 from azureml.train.estimator import Estimator
 
 
-def main(workspace,inputs):
+def main(workspace):
     # Loading compute target
     print("Loading compute target")
     compute_target = ComputeTarget(
